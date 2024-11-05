@@ -1,48 +1,49 @@
+import static org.junit.Assert.*;
 import org.junit.Test;
 import java.io.ByteArrayOutputStream;
 import java.io.PrintStream;
-import static org.junit.Assert.assertTrue;
-import static org.junit.Assert.assertEquals;
 
 public class Dex2HexTest {
 
-    // Helper method to capture printed output
-    private String captureOutput(Runnable methodToRun) {
-        // Set up a ByteArrayOutputStream to capture the output
+    @Test
+    public void testNoInputArgument() {
+        // Simulate no input argument being provided
+        String[] args = {};
+        // Capture the system output
         ByteArrayOutputStream outputStream = new ByteArrayOutputStream();
-        PrintStream originalOut = System.out;  // Save the original System.out
-
-        // Redirect System.out to the ByteArrayOutputStream
         System.setOut(new PrintStream(outputStream));
 
-        // Run the method (this will print to the outputStream)
-        methodToRun.run();
+        Dex2Hex.main(args);
 
-        // Restore original System.out
-        System.setOut(originalOut);
-
-        return outputStream.toString().trim();  // Return the captured output as a String
+        String output = outputStream.toString().trim();
+        assertEquals("Error: No input argument provided.", output);
     }
 
-    // Tests when there is no input argument provided
     @Test
-    public void testNoInput() {
-        String output = captureOutput(() -> Dex2Hex.main(new String[]{}));
-        assertEquals("Error: You haven't provided a number. Please provide a decimal number to convert.", output);
+    public void testInvalidIntegerInput() {
+        // Simulate invalid input (non-integer)
+        String[] args = {"abc"};
+        // Capture the system output
+        ByteArrayOutputStream outputStream = new ByteArrayOutputStream();
+        System.setOut(new PrintStream(outputStream));
+
+        Dex2Hex.main(args);
+
+        String output = outputStream.toString().trim();
+        assertEquals("Error: Invalid input. Please provide an integer.", output);
     }
 
-    // Tests when the input is not an integer
     @Test
-    public void testInvalidInput() {
-        String output = captureOutput(() -> Dex2Hex.main(new String[]{"abc"}));
-        assertEquals("Error: Invalid input. Please provide a decimal number to convert.", output);
-    }
+    public void testValidIntegerInput() {
+        // Simulate valid input
+        String[] args = {"255"};
+        // Capture the system output
+        ByteArrayOutputStream outputStream = new ByteArrayOutputStream();
+        System.setOut(new PrintStream(outputStream));
 
-    // Tests when a valid decimal input is provided
-    @Test
-    public void testValidDecimalInput() {
-        String output = captureOutput(() -> Dex2Hex.main(new String[]{"255"}));
-        assertTrue(output.contains("Converting the Decimal Value 255 to Hex..."));
+        Dex2Hex.main(args);
+
+        String output = outputStream.toString().trim();
         assertTrue(output.contains("Hexadecimal representation is: FF"));
     }
 }

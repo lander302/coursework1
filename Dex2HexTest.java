@@ -1,7 +1,8 @@
-import org.junit.jupiter.api.Test;
-import static org.junit.jupiter.api.Assertions.*;
+import org.junit.Test;
 import java.io.ByteArrayOutputStream;
 import java.io.PrintStream;
+import static org.junit.Assert.assertTrue;
+import static org.junit.Assert.assertEquals;
 
 public class Dex2HexTest {
 
@@ -44,3 +45,4 @@ public class Dex2HexTest {
         assertTrue(output.contains("Converting the Decimal Value 255 to Hex..."));
         assertTrue(output.contains("Hexadecimal representation is: FF"));
     }
+}

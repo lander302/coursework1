@@ -1,35 +1,92 @@
-import static org.junit.Assert.*;
 import org.junit.Test;
+import org.junit.*;
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertTrue;
 import java.io.ByteArrayOutputStream;
 import java.io.PrintStream;
 
+
+
+
+
 public class Dex2HexTest {
 
+
+
+    public Dex2HexTest() {}
+
+    Dex2Hex dex2hex;
+
+
+    @Before
+    public void setUp() {
+        dex2hex = new Dex2Hex();
+
+    }
+
+
+
     @Test
-    public void testNoInputArgument() {
-        // Simulate no input argument being provided
+    public void testValidIntegerInput() {
+        // Valid integer input
+        String[] args = {"255"};
+        String output = getOutput(args);
+
+  // Convert input to hexadecimal output
+        assertTrue(output.contains("Converting the Decimal Value 255 to Hex..."));
+        assertTrue(output.contains("Hexadecimal representation is: FF"));
+        assertTrue(output.contains("Your integer has been converted"));
+
+	}
+
+
+
+    @Test
+    public void testWhenNoInput() {
+        // No output given
         String[] args = {};
-        // Capture the system output
-        ByteArrayOutputStream outputStream = new ByteArrayOutputStream();
-        System.setOut(new PrintStream(outputStream));
+        String output = getOutput(args);  // Use getOutput to capture console output
 
-        Dex2Hex.main(args);
+        // Validate output message for no input
+        assertTrue(output.contains("Error: \n No input given"));
 
-        String output = outputStream.toString().trim();
-        assertEquals("Error: No input argument provided.", output);
     }
+
+
 
     @Test
-    public void testInvalidIntegerInput() {
-        // Simulate invalid input (non-integer)
+    public void testWhenNonIntegerInput() {
+        //When a non-integer input is given
         String[] args = {"abc"};
-        // Capture the system output
+        String output = getOutput(args);  // Use getOutput to capture console output
+
+
+
+        // Validate output message for non-integer input
+        assertTrue(output.contains("Error: Please input an integer"));
+
+	}
+
+    // Utility method to capture console output with input arguments
+    private String getOutput(String[] args) {
         ByteArrayOutputStream outputStream = new ByteArrayOutputStream();
+        PrintStream originalOut = System.out;
         System.setOut(new PrintStream(outputStream));
 
+
+
+        // Run Dex2Hex with the specified args
         Dex2Hex.main(args);
 
-        String output = outputStream.toString().trim();
-        assertEquals("Error: Invalid input. Please provide an integer.", output);
+
+
+        // Restore original System.out
+ 	System.setOut(originalOut);
+
+
+
+        return outputStream.toString();
+
     }
+
 }

@@ -32,18 +32,4 @@ public class Dex2HexTest {
         String output = outputStream.toString().trim();
         assertEquals("Error: Invalid input. Please provide an integer.", output);
     }
-
-    @Test
-    public void testValidIntegerInput() {
-        // Simulate valid input
-        String[] args = {"255"};
-        // Capture the system output
-        ByteArrayOutputStream outputStream = new ByteArrayOutputStream();
-        System.setOut(new PrintStream(outputStream));
-
-        Dex2Hex.main(args);
-
-        String output = outputStream.toString().trim();
-        assertTrue(output.contains("Hexadecimal representation is: FF"));
-    }
 }

@@ -29,7 +29,7 @@ class Dex2Hex {
 
         while(num != 0){
             rem = num % 16;
-            hexadecimal = ch[rem] + hexadecimal;
+            hexadecimal.insert(0, ch[rem]);
             num = num / 16;
         }
 

@@ -1,7 +1,6 @@
 import java.util.Scanner;
 import static org.junit.Assert.assertTrue;
 import static org.junit.Assert.fail;
-import java.util.logging.Logger;
 
 
 class Dex2Hex {
@@ -22,8 +21,7 @@ class Dex2Hex {
 
 
         char[] ch ={'0','1','2','3','4','5','6','7','8','9','A','B','C','D','E','F'};
-        int rem; 
-	num = arg1;
+        int rem, num = arg1;
         String hexadecimal="";
  	
 	

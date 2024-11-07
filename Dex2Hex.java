@@ -28,9 +28,9 @@ class Dex2Hex {
 	num = arg1;
         StringBuilder hexadecimal = new StringBuilder();
  	
-	if (logger.isLoggable(java.util.logging.Level.INFO)) {
+	
         logger.info("Converting the Decimal Value " + num + " to Hex...");
-	}
+	
 
         while(num != 0){
             rem = num % 16;
@@ -38,12 +38,12 @@ class Dex2Hex {
             num = num / 16;
         }
 
-	if (logger.isLoggable(java.util.logging.Level.INFO)) {
+	
 		logger.info(String.format("Hexadecimal representation is: %s", hexadecimal));
-	}
-	if (logger.isLoggable(java.util.logging.Level.INFO)) {
+	
+	
 		logger.info("Your integer has been converted");
-    	}
+    	
 	
 	}
 }

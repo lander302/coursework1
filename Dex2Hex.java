@@ -1,4 +1,4 @@
-package com.example.hex;
+
 
 import java.util.Scanner;
 import static org.junit.Assert.assertTrue;

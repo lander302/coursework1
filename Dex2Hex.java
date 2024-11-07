@@ -4,7 +4,6 @@ import static org.junit.Assert.fail;
 
 
 class Dex2Hex {
-   // public static final Logger logger = Logger.getLogger(Dex2Hex.class.getName());
 
     public static void main(String args[])    {
         if (args.length == 0) {
@@ -41,4 +40,4 @@ class Dex2Hex {
 		System.out.println("Your integer has been converted");
 
 	}
-}
+

@@ -5,7 +5,7 @@ import static org.junit.Assert.fail;
 class Dex2Hex {
 
     public static void main(String args[])    {
-
+    private static final Logger logger = Logger.getLogger(HexadecimalConverter.class.getName());
         if (args.length == 0) {
             System.out.println("Error: \n No input given");
             return;
@@ -25,7 +25,7 @@ class Dex2Hex {
         System.out.println("Converting the Decimal Value " + num + " to Hex...");
 
 
-
+        StringBuilder hexadecimal = new StringBuilder();
         while(num != 0){
             rem = num % 16;
             hexadecimal = ch[rem] + hexadecimal;
@@ -35,5 +35,7 @@ class Dex2Hex {
         System.out.println("Hexadecimal representation is: " + hexadecimal);
         System.out.println("Your integer has been converted");
 
+	logger.info("Hexadecimal representation is: " + hexadecimal.toString()):
+	logger.info("Your integer has been converted"):
     }
 }

@@ -35,7 +35,7 @@ class Dex2Hex {
         }
 
 	
-		System.out.println("Hexadecimal representation is: " + hexadecimal));
+		System.out.println("Hexadecimal representation is: " + hexadecimal);
 	
 	
 		System.out.println("Your integer has been converted");

@@ -1,10 +1,10 @@
+package com.example.hex;
+
 import java.util.Scanner;
 import static org.junit.Assert.assertTrue;
 import static org.junit.Assert.fail;
 import java.util.logging.Logger;
 
-
-package com.example.hex;
 
 class Dex2Hex {
     public static final Logger logger = Logger.getLogger(Dex2Hex.class.getName());

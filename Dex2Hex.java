@@ -7,7 +7,7 @@ class Dex2Hex {
     public static void main(String args[])    {
 
         if (args.length == 0) {
-            System.out.println("2Error: \n No input given");
+            System.out.println("Error: \n No input given");
             return;
         }
         int arg1;
@@ -19,10 +19,10 @@ class Dex2Hex {
         }
 
 
-        char ch[]={'0','1','2','3','4','5','6','7','8','9','A','B','C','D','E', 'F'};
+        char ch[]={'0','1','2','3','4','5','6','7','8','9','A','B','C','D','E','F'};
         int rem, num = arg1;
         String hexadecimal="";
-        System.out.println("Converting the Decimal Value " + num + " to Hex....");
+        System.out.println("Converting the Decimal Value " + num + " to Hex...");
 
 
 

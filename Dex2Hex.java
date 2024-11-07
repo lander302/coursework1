@@ -34,7 +34,7 @@ class Dex2Hex {
         }
 
 
-	logger.info("Hexadecimal representation is: " + hexadecimal);
+	logger.info(String.format("Hexadecimal representation is: %s", hexadecimal));
 	logger.info("Your integer has been converted");
     }
 }

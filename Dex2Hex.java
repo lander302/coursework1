@@ -1,11 +1,12 @@
 import java.util.Scanner;
 import static org.junit.Assert.assertTrue;
 import static org.junit.Assert.fail;
+import java.util.logging.Logger;
 
 class Dex2Hex {
+    public static final Logger logger = Logger.getLogger(HexadecimalConverter.class.getName());
 
     public static void main(String args[])    {
-    public static final Logger logger = Logger.getLogger(HexadecimalConverter.class.getName());
         if (args.length == 0) {
             System.out.println("Error: \n No input given");
             return;

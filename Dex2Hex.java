@@ -32,8 +32,8 @@ class Dex2Hex {
             num = num / 16;
         }
 
-        System.out.println("Hexadecimal representation is: " + hexadecimal);
-        System.out.println("Your integer has been converted");
+  //      System.out.println("Hexadecimal representation is: " + hexadecimal);
+//        System.out.println("Your integer has been converted");
 
 	logger.info("Hexadecimal representation is: " + hexadecimal.toString()):
 	logger.info("Your integer has been converted"):

@@ -7,7 +7,7 @@ class Dex2Hex {
 
     public static void main(String args[])    {
         if (args.length == 0) {
-            System.out.println("Error: \n No input given");
+            System.out.println("2Error: \n No input given");
             return;
         }
         int arg1;

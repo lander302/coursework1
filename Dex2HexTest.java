@@ -19,7 +19,7 @@ public class Dex2HexTest {
 
     	logStream = new ByteArrayOutputStream();
 	originalOut = System.out;
-	originialErr = System.err;
+	originalErr = System.err;
 
         System.setOut(new PrintStream(logStream)); // sets it to System.out
 	System.setErr(new PrintStream(logStream));

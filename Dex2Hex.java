@@ -2,13 +2,20 @@ import java.util.Scanner;
 import static org.junit.Assert.assertTrue;
 import static org.junit.Assert.fail;
 import java.util.logging.Logger;
-
+import java.util.logging.ConsoleHandler;
+import java.util.logging.Level;
 
 class Dex2Hex {
     public static final Logger logger = Logger.getLogger(Dex2Hex.class.getName());
 
     public static void main(String args[])    {
-        if (args.length == 0) {
+        
+	ConsoleHandler consoleHandler = new ConsoleHandler();
+	consoleHandler.setLevel(Level.ALL);
+	logger.addHandler(consoleHandler);
+
+
+	if (args.length == 0) {
             logger.info("Error: \n No input given");
             return;
         }
@@ -27,7 +34,7 @@ class Dex2Hex {
         StringBuilder hexadecimal = new StringBuilder();
 
 
-        logger.info("Converting the Decimal Value " + num + " to Hex...");
+        logger.info("Converting the Decimal Value " + num + " to Hex....");
 
 
         while(num != 0){

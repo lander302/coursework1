@@ -41,8 +41,9 @@ public class Dex2HexTest {
         String[] args = {};
         String output = getOutput(args);  // Use getOutput to capture console output
 
-        // Validate output message for no input
-        assertTrue(output.trim().contains("Error: No input has been given"));
+        // Validate output message for no input and make sure no white space
+        assertEquals("Error: No input has been given", output.trim());
+
 
     }
 
@@ -54,8 +55,8 @@ public class Dex2HexTest {
 
 
 
-        // Validate output message for non-integer input
-        assertTrue(output.contains("Error: Please input an integer."));
+        // Validate output message for non-integer input and make sure no white space
+        assertEquals("Error: Please input an integer.", output.trim());
 
         }
 

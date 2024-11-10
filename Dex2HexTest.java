@@ -29,7 +29,7 @@ public class Dex2HexTest {
 	logger.setLevel(Level.ALL);
 
    @After
-   public void store() {
+   public void tearDown() {
 
 	System.setOut(originalOut);
 

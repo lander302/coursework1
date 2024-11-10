@@ -2,7 +2,7 @@ import org.junit.*;
 import static org.junit.Assert.assertTrue;
 import java.io.ByteArrayOutputStream;
 import java.io.PrintStream;
-import static org.junit.Assert.asserEquals;
+import static org.junit.Assert.assertEquals;
 import java.util.logging.*;
 
 public class Dex2HexTest {

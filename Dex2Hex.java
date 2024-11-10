@@ -10,8 +10,8 @@ import java.io.IOException;
 
 class Dex2Hex {
 
-private static final Logger logger = Logger.getLogger(Dex2Hex.class.getName());
-logger.setLevel(Level.ALL);
+//private static final Logger logger = Logger.getLogger(Dex2Hex.class.getName());
+//logger.setLevel(Level.ALL);
   
     public static void main(String args[])    {
 

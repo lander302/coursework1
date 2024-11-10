@@ -3,8 +3,12 @@ import org.junit.runner.Result;
 import org.junit.*;
 import org.junit.runner.notification.Failure;
 import java.lang.Exception;
+import java.util.logging.Logger;
 
 public class TestRunner {
+
+private static final Logger logger = Logger.getLogger(TestRunner.class.getName());
+
 	public static void main(String[] args) {
       		Result result = JUnitCore.runClasses(Dex2HexTest.class);
       		int fails = 0;

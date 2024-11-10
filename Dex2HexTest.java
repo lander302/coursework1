@@ -42,7 +42,7 @@ public class Dex2HexTest {
         String output = getOutput(args);  // Use getOutput to capture console output
 
         // Validate output message for no input
-        assertTrue(output.contains("Error: \n No input given"));
+        assertTrue(output.contains("Error: No input given"));
 
     }
 

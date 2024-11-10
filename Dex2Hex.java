@@ -16,14 +16,14 @@ logger.setLevel(Level.ALL);
     public static void main(String args[])    {
 
 	if (args.length == 0) {
-            logger.info("Error: No input has been given");
+            System.out.println("Error: No input has been given");
             return;
         }
         int arg1;
         try {
             arg1 = Integer.parseInt(args[0]);
         } catch (NumberFormatException e) {
-            logger.info("Error: Please input an integer.");
+            System.out.println("Error: Please input an integer.");
             return;
   }
 
@@ -34,7 +34,7 @@ logger.setLevel(Level.ALL);
         StringBuilder hexadecimal = new StringBuilder();
 
 
-        logger.info("Converting the Decimal Value " + num + " to Hex...");
+        System.out.println("Converting the Decimal Value " + num + " to Hex...");
 
 
         while(num != 0){
@@ -44,8 +44,8 @@ logger.setLevel(Level.ALL);
         }
 		
 		
-        logger.info("Hexadecimal representation is: " + hexadecimal);
-        logger.info("Your integer has been converted");
+        System.out.println("Hexadecimal representation is: " + hexadecimal);
+        System.out.println("Your integer has been converted");
 
  
 }

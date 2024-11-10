@@ -28,9 +28,9 @@ public class Dex2HexTest {
         String output = getOutput(args);
 
         // Convert input to hexadecimal output
-        assertEquals(output.contains("Converting the Decimal Value 255 to Hex..."));
-        assertEquals(output.contains("Hexadecimal representation is: FF"));
-        assertEquals(output.contains("Your integer has been converted"));
+        assertTrue(output.contains("Converting the Decimal Value 255 to Hex..."));
+        assertTrue(output.contains("Hexadecimal representation is: FF"));
+        assertTrue(output.contains("Your integer has been converted"));
 
         }
 
@@ -43,7 +43,7 @@ public class Dex2HexTest {
         String output = getOutput(args);  // Use getOutput to capture console output
 
         // Validate output message for no input
-        assertEquals(output.contains("Error: \n No input given"));
+        assertTrue(output.contains("Error: \n No input given"));
 
     }
 
@@ -56,7 +56,7 @@ public class Dex2HexTest {
 
 
         // Validate output message for non-integer input
-        assertEquals(output.contains("Error: Please input an integer"));
+        assertTrue(output.contains("Error: Please input an integer"));
 
         }
 

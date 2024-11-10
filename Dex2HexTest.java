@@ -74,5 +74,4 @@ public class Dex2HexTest {
         return outputStream.toString();
 
     }
-
 }

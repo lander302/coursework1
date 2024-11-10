@@ -32,7 +32,7 @@ class Dex2Hex {
 
 
 	if (args.length == 0) {
-            logger.info("Error: \n No input given");
+            logger.info("Error: No input given");
             return;
         }
         int arg1;

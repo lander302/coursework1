@@ -77,7 +77,7 @@ public class Dex2HexTest {
         // Restore original System.out
         System.setOut(originalOut);
 
-	System.out.println("Captured Output: " + outputStrean.toString());
+	System.out.println("Captured Output: " + outputStream.toString());
 
         return outputStream.toString();
 

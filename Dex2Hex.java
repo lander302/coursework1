@@ -9,10 +9,20 @@ class Dex2Hex {
     public static final Logger logger = Logger.getLogger(Dex2Hex.class.getName());
 
     public static void main(String args[])    {
+
+        // Create a ByteArrayOutputStream to capture log output
+        ByteArrayOutputStream logStream = new ByteArrayOutputStream();
+        Handler logHandler = new ConsoleHandler() {
+            @Override
+            public void publish(java.util.logging.LogRecord record) {
+                logStream.write((getFormatter().format(record)).getBytes());
+            }
+        };
+
+
         
-	ConsoleHandler consoleHandler = new ConsoleHandler();
-	consoleHandler.setLevel(Level.ALL);
-	logger.addHandler(consoleHandler);
+	logHandler.setLevel(Level.ALL);
+	logger.addHandler(logHandler);
 
 
 	if (args.length == 0) {
@@ -46,6 +56,8 @@ class Dex2Hex {
 		
         logger.info("Hexadecimal representation is: " + hexadecimal);
         logger.info("Your integer has been converted");
+
+ 	System.out.println(logStream.toString());
 }
 }
 

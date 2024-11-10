@@ -10,7 +10,7 @@ public class Dex2HexTest {
 
 	private Dex2Hex dex2hex;
 	private ByteArrayOutputStream logStream;
-	private PrintStream originalOut:
+	private PrintStream originalOut;
 
 
     @Before
@@ -24,12 +24,12 @@ public class Dex2HexTest {
 	consoleHandler.setOutputStream(logStream);
 	consoleHandler.setLevel(Level.ALL);
 
-	Logger logger = Logger.getLogger(Dex2Hex.class.getName()):
+	Logger logger = Logger.getLogger(Dex2Hex.class.getName());
 	logger.addHandler(consoleHandler);
 	logger.setLevel(Level.ALL);
 
    @After
-   publi void store() {
+   public void store() {
 
 	System.setOut(originalOut);
 

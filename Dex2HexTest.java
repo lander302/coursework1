@@ -20,9 +20,12 @@ public class Dex2HexTest {
     	logStream = new ByteArrayOutputStream();
 	originalOut = System.out;
 
-	ConsoleHandler consoleHandler = new ConsoleHandler();
-	consoleHandler.setOutputStream(logStream);
-	consoleHandler.setLevel(Level.ALL);
+	 ConsoleHandler consoleHandler = new ConsoleHandler() {
+            {
+                setOutputStream(logStream); // Set log stream during initialization
+            }
+        };
+        consoleHandler.setLevel(Level.ALL);
 
 	Logger logger = Logger.getLogger(Dex2Hex.class.getName());
 	logger.addHandler(consoleHandler);

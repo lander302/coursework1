@@ -9,6 +9,8 @@ import java.util.logging.Handler;
 import java.io.IOException;
 
 class Dex2Hex {
+
+private static final Logger logger = Logger.getLogger(Dex2Hex.class.getName());
   
     public static void main(String args[])    {
 

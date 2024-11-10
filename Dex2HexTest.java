@@ -69,7 +69,6 @@ public class Dex2HexTest {
         System.setOut(originalOut);
 
 
-
         return outputStream.toString();
 
     }

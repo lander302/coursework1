@@ -7,6 +7,8 @@ import java.io.PrintStream;
 
 public class Dex2HexTest {
 
+
+
     public Dex2HexTest() {}
 
     Dex2Hex dex2hex;
@@ -26,7 +28,7 @@ public class Dex2HexTest {
         String[] args = {"255"};
         String output = getOutput(args);
 
-        // Converts input to hexadecimal and outputs answer
+        // Convert input to hexadecimal output
         assertTrue(output.contains("Converting the Decimal Value 255 to Hex..."));
         assertTrue(output.contains("Hexadecimal representation is: FF"));
         assertTrue(output.contains("Your integer has been converted"));
@@ -41,7 +43,7 @@ public class Dex2HexTest {
         String[] args = {};
         String output = getOutput(args);  // Use getOutput to capture console output
 
-        // Output message for no input given
+        // Validate output message for no input
         assertTrue(output.contains("Error: \n No input given"));
 
     }
@@ -76,7 +78,7 @@ public class Dex2HexTest {
         System.setOut(originalOut);
 
 
-	// Returns output depending on input
+
         return outputStream.toString();
 
     }

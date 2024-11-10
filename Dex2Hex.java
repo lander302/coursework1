@@ -18,7 +18,7 @@ class Dex2Hex {
         } catch (NumberFormatException e) {
             logger.info("Error: Please input an integer.");
             return;
-        }
+  }
 
 
         char[] ch ={'0','1','2','3','4','5','6','7','8','9','A','B','C','D','E','F'};
@@ -35,9 +35,10 @@ class Dex2Hex {
             hexadecimal.insert(0, ch[rem]);
             num = num / 16;
         }
-
-
-	logger.info("Hexadecimal representation is: " + hexadecimal);
-	logger.info("Your integer has been converted");
+		
+		
+        logger.info("Hexadecimal representation is: " + hexadecimal);
+        logger.info("Your integer has been converted");
 }
 }
+

@@ -23,7 +23,6 @@ public class Dex2HexTest {
          System.setOut(new PrintStream(logStream)); // sets it to System.out
          
 	ConsoleHandler consoleHandler = new ConsoleHandler();
-        consoleHandler.setOutputStream(logStream);  // Redirect logger output to the same stream
         consoleHandler.setLevel(Level.ALL);
 
         Logger logger = Logger.getLogger(Dex2Hex.class.getName());
@@ -37,7 +36,7 @@ public class Dex2HexTest {
 
 	System.setOut(originalOut);
 
- Logger logger = Logger.getLogger(Dex2Hex.class.getName());
+ 	Logger logger = Logger.getLogger(Dex2Hex.class.getName());
         for (Handler handler : logger.getHandlers()) {
             logger.removeHandler(handler);
 

@@ -19,7 +19,7 @@ private static final Logger logger = Logger.getLogger(TestRunner.class.getName()
          	   }
           		if(fails >0)
             			throw  new Exception();
-          		logger.info("Test runs successful: " + result.wasSuccessful());
+          		logger.info("Test run successful: " + result.wasSuccessful());
       		}
       		catch(Exception e)
       		{

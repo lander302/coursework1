@@ -8,17 +8,30 @@ import java.util.logging.*;
 public class Dex2HexTest {
 
 
-
-    public Dex2HexTest() {}
-
-    Dex2Hex dex2hex;
+	private Dex2Hex dex2hex;
+	private ByteArrayOutputStream logStream;
+	private PrintStream originalOut:
 
 
     @Before
     public void setUp() {
         dex2hex = new Dex2Hex();
-    }
 
+    	logStream = new ByteArrayOutputStream();
+	originalOut = System.out;
+
+	ConsoleHandler consoleHandler = new ConsoleHandler();
+	consoleHandler.setOutputStream(logStream);
+	consoleHandler.setLevel(Level.ALL);
+
+	Logger logger = Logger.getLogger(Dex2Hex.class.getName()):
+	logger.addHandler(consoleHandler);
+	logger.setLevel(Level.ALL);
+
+   @After
+   publi void store() {
+
+	System.setOut(originalOut);
 
 
     @Test
@@ -63,32 +76,14 @@ public class Dex2HexTest {
 
     // Utility method to capture console output with input arguments
      private String getOutput(String[] args) {
- 
-        ByteArrayOutputStream outputStream = new ByteArrayOutputStream();
-        PrintStream originalOut = System.out;
-        System.setOut(new PrintStream(outputStream));
-
-
-
-        
-
-  try {
+ 	 try {
             // Run Dex2Hex with the specified arguments
             Dex2Hex.main(args);
         } catch (Exception e) {
             e.printStackTrace();
-        } finally {
-            // Restore original System.out after the method executes
-            System.setOut(originalOut);
         }
 
-
-
-
-        // Restore original System.out
-        System.setOut(originalOut);
-
-        return outputStream.toString().trim();
+        return logStream.toString().trim();
 
     }
 

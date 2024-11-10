@@ -20,8 +20,15 @@ public class Dex2HexTest {
     	logStream = new ByteArrayOutputStream();
 	originalOut = System.out;
 
-                System.setOut(new PrintStream(logStream)); // sets it to System.out
-            
+         System.setOut(new PrintStream(logStream)); // sets it to System.out
+         
+	ConsoleHandler consoleHandler = new ConsoleHandler();
+        consoleHandler.setOutputStream(logStream);  // Redirect logger output to the same stream
+        consoleHandler.setLevel(Level.ALL);
+
+        Logger logger = Logger.getLogger(Dex2Hex.class.getName());
+        logger.addHandler(consoleHandler);
+        logger.setLevel(Level.ALL);   
 
 	}
 
@@ -29,6 +36,12 @@ public class Dex2HexTest {
    public void tearDown() {
 
 	System.setOut(originalOut);
+
+ Logger logger = Logger.getLogger(Dex2Hex.class.getName());
+        for (Handler handler : logger.getHandlers()) {
+            logger.removeHandler(handler);
+
+	  }
 	}
 
     @Test

@@ -18,7 +18,7 @@ class Dex2Hex {
 	ConsoleHandler consoleHandler = new ConsoleHandler();
 	consoleHandler.setLevel(Level.ALL);
 	logger.addHandler(consoleHandler);
-	logger.setLevel(Level.ALL)
+	logger.setLevel(Level.ALL);
 
 	}
   

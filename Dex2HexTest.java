@@ -20,7 +20,7 @@ public class Dex2HexTest {
     	logStream = new ByteArrayOutputStream();
 	originalOut = System.out;
 
-                System.setOut(new PrintStream(logStream); // sets it to System.out
+                System.setOut(new PrintStream(logStream)); // sets it to System.out
             
 
 	}

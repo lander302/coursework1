@@ -37,6 +37,8 @@ public class Dex2HexTest {
         String[] args = {"255"};
         String output = getOutput(args);
 
+	System.out.println("Captured Output: \n" + output);
+
         // Convert input to hexadecimal output
         assertTrue(output.contains("Converting the Decimal Value 255 to Hex..."));
         assertTrue(output.contains("Hexadecimal representation is: FF"));
@@ -51,6 +53,8 @@ public class Dex2HexTest {
         // No output given
         String[] args = {};
         String output = getOutput(args);  // Use getOutput to capture console output
+
+	System.out.println("Captured Output: \n" + output);
 
         // Validate output message for no input and make sure no white space
         assertEquals("Error: No input has been given", output.trim());

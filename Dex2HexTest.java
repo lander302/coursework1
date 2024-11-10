@@ -2,6 +2,7 @@ import org.junit.*;
 import static org.junit.Assert.assertTrue;
 import java.io.ByteArrayOutputStream;
 import java.io.PrintStream;
+import java.util.logging.*;
 
 public class Dex2HexTest {
 
@@ -15,7 +16,6 @@ public class Dex2HexTest {
     @Before
     public void setUp() {
         dex2hex = new Dex2Hex();
-
     }
 
 

@@ -1,24 +1,88 @@
 import org.junit.Test;
-import static org.junit.Assert.*;
+import org.junit.*;
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertTrue;
+import java.io.ByteArrayOutputStream;
+import java.io.PrintStream;
+
+
+
+
 
 public class Dex2HexTest {
 
-    @Test
-    public void testForCorrectInput() {
-        String[] args = {"255"};  // Valid input
-        Dex2Hex.main(args);  // runs the program with this input
+
+
+    public Dex2HexTest() {}
+
+    Dex2Hex dex2hex;
+
+
+    @Before
+    public void setUp() {
+        dex2hex = new Dex2Hex();
+
     }
+
+
+
+    @Test
+    public void testForcorrectInput() {
+        // Valid integer input
+       String[] args = {"255"};
+        String output = getOutput(args);
+
+        // Convert input to hexadecimal output
+        assertTrue(output.contains("Converting the Decimal Value 255 to Hex..."));
+        assertTrue(output.contains("Hexadecimal representation is: FF"));
+        assertTrue(output.contains("Your integer has been converted"));
+
+        }
+
+
 
     @Test
     public void testForNoInput() {
-        String[] args = {};  // No input
-        Dex2Hex.main(args);  // Expect an error message
-          }
+        // No output given
+        String[] args = {};
+        String output = getOutput(args);  // Use getOutput to capture console output
 
-    @Test
-    public void testForANonIntegerInput() {
-        String[] args = {"abc"};  // Invalid input
-        Dex2Hex.main(args);  // Expect an error message
-      
+        // Validate output message for no input
+        assertTrue(output.contains("Error: \n No input given"));
+
     }
+
+ @Test
+    public void testForANonIntegerInput() {
+        //When a non-integer input is given
+        String[] args = {"abc"};
+        String output = getOutput(args);  // Use getOutput to capture console output
+
+        // Validate output message for non-integer input
+        assertTrue(output.contains("Error: Please input an integer"));
+
+        }
+
+    // Utility method to capture console output with input arguments
+    private String getOutput(String[] args) {
+        ByteArrayOutputStream outputStream = new ByteArrayOutputStream();
+        PrintStream originalOut = System.out;
+        System.setOut(new PrintStream(outputStream));
+
+
+
+        // Run Dex2Hex with the specified args
+        Dex2Hex.main(args);
+
+
+
+        // Restore original System.out
+        System.setOut(originalOut);
+
+
+
+        return outputStream.toString();
+
+    }
+
 }

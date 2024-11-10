@@ -5,7 +5,6 @@ import static org.junit.Assert.assertTrue;
 import java.io.ByteArrayOutputStream;
 import java.io.PrintStream;
 
-
 public class Dex2HexTest {
 
     public Dex2HexTest() {}

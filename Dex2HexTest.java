@@ -28,11 +28,13 @@ public class Dex2HexTest {
 	logger.addHandler(consoleHandler);
 	logger.setLevel(Level.ALL);
 
+	}
+
    @After
    public void tearDown() {
 
 	System.setOut(originalOut);
-
+	}
 
     @Test
     public void testForcorrectInput() {

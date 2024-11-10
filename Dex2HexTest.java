@@ -61,7 +61,8 @@ public class Dex2HexTest {
         }
 
     // Utility method to capture console output with input arguments
-    private String getOutput(String[] args) {
+     private String getOutput(String[] args) {
+ 
         ByteArrayOutputStream outputStream = new ByteArrayOutputStream();
         PrintStream originalOut = System.out;
         System.setOut(new PrintStream(outputStream));
@@ -76,7 +77,7 @@ public class Dex2HexTest {
         // Restore original System.out
         System.setOut(originalOut);
 
-
+	System.out.println("Captured Output: " + outputStrean.toString());
 
         return outputStream.toString();
 

@@ -5,13 +5,7 @@ import static org.junit.Assert.assertTrue;
 import java.io.ByteArrayOutputStream;
 import java.io.PrintStream;
 
-
-
-
-
 public class Dex2HexTest {
-
-
 
     public Dex2HexTest() {}
 
@@ -24,13 +18,11 @@ public class Dex2HexTest {
 
     }
 
-
-
     @Test
     public void testForcorrectInput() {
         // Valid integer input
        String[] args = {"255"};
-        String output = getOutput(args);
+       String output = getOutput(args);
 
         // Convert input to hexadecimal output
         assertTrue(output.contains("Converting the Decimal Value 255 to Hex..."));
@@ -38,8 +30,6 @@ public class Dex2HexTest {
         assertTrue(output.contains("Your integer has been converted"));
 
         }
-
-
 
     @Test
     public void testForNoInput() {
@@ -52,7 +42,7 @@ public class Dex2HexTest {
 
     }
 
- @Test
+    @Test
     public void testForANonIntegerInput() {
         //When a non-integer input is given
         String[] args = {"abc"};

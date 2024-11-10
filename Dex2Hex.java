@@ -9,37 +9,37 @@ import java.util.logging.Handler;
 import java.io.IOException;
 
 class Dex2Hex {
-    public static final Logger logger = Logger.getLogger(Dex2Hex.class.getName());
+   // public static final Logger logger = Logger.getLogger(Dex2Hex.class.getName());
 
     public static void main(String args[])    {
 
         // Create a ByteArrayOutputStream to capture log output
-        ByteArrayOutputStream logStream = new ByteArrayOutputStream();
-        Handler logHandler = new ConsoleHandler() {
-            @Override
-             public void publish(java.util.logging.LogRecord record) {
-                try {
+//        ByteArrayOutputStream logStream = new ByteArrayOutputStream();
+  //      Handler logHandler = new ConsoleHandler() {
+    //        @Override
+     //        public void publish(java.util.logging.LogRecord record) {
+       //         try {
                     // Write the formatted log message to logStream
-                    logStream.write((getFormatter().format(record)).getBytes());
-                } catch (IOException e) {
+         //           logStream.write((getFormatter().format(record)).getBytes());
+           //     } catch (IOException e) {
                     // Handle the IOException (you can log it if necessary)
-                    logger.severe("Error writing to log stream: " + e.getMessage());
-                }
-            }
-        };        
-	logHandler.setLevel(Level.ALL);
-	logger.addHandler(logHandler);
+             //       logger.severe("Error writing to log stream: " + e.getMessage());
+               // }
+           // }
+       // };        
+//	logHandler.setLevel(Level.ALL);
+//	logger.addHandler(logHandler);
 
 
 	if (args.length == 0) {
-            logger.info("Error: No input given");
+            System.out.println("Error: No input has been given");
             return;
         }
         int arg1;
         try {
             arg1 = Integer.parseInt(args[0]);
         } catch (NumberFormatException e) {
-            logger.info("Error: Please input an integer.");
+            System.out.println("Error: Please input an integer.");
             return;
   }
 
@@ -50,7 +50,7 @@ class Dex2Hex {
         StringBuilder hexadecimal = new StringBuilder();
 
 
-        logger.info("Converting the Decimal Value " + num + " to Hex...");
+        System.out.println("Converting the Decimal Value " + num + " to Hex...");
 
 
         while(num != 0){
@@ -60,10 +60,10 @@ class Dex2Hex {
         }
 		
 		
-        logger.info("Hexadecimal representation is: " + hexadecimal);
-        logger.info("Your integer has been converted");
+        System.out.println("Hexadecimal representation is: " + hexadecimal);
+        System.out.print("Your integer has been converted");
 
- 	System.out.println(logStream.toString());
+ 
 }
 }
 

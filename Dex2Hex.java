@@ -34,7 +34,7 @@ class Dex2Hex {
         StringBuilder hexadecimal = new StringBuilder();
 
 
-        logger.info("Converting the Decimal Value " + num + " to Hex....");
+        logger.info("Converting the Decimal Value " + num + " to Hex...");
 
 
         while(num != 0){

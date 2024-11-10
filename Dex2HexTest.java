@@ -70,8 +70,7 @@ public class Dex2HexTest {
 
 
 
-        // Run Dex2Hex with the specified args
-//        Dex2Hex.main(args);
+        
 
   try {
             // Run Dex2Hex with the specified arguments
@@ -88,8 +87,6 @@ public class Dex2HexTest {
 
         // Restore original System.out
         System.setOut(originalOut);
-
-//	System.out.println("Captured Output: " + outputStream.toString());
 
         return outputStream.toString().trim();
 

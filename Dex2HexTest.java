@@ -42,7 +42,7 @@ public class Dex2HexTest {
         String output = getOutput(args);  // Use getOutput to capture console output
 
         // Validate output message for no input
-        assertTrue(output.contains("Error: No input given"));
+        assertTrue(output.trim().contains("Error: No input has been given"));
 
     }
 
@@ -55,7 +55,7 @@ public class Dex2HexTest {
 
 
         // Validate output message for non-integer input
-        assertTrue(output.contains("Error: Please input an integer"));
+        assertTrue(output.contains("Error: Please input an integer."));
 
         }
 
@@ -69,16 +69,27 @@ public class Dex2HexTest {
 
 
         // Run Dex2Hex with the specified args
-        Dex2Hex.main(args);
+//        Dex2Hex.main(args);
+
+  try {
+            // Run Dex2Hex with the specified arguments
+            Dex2Hex.main(args);
+        } catch (Exception e) {
+            e.printStackTrace();
+        } finally {
+            // Restore original System.out after the method executes
+            System.setOut(originalOut);
+        }
+
 
 
 
         // Restore original System.out
         System.setOut(originalOut);
 
-	System.out.println("Captured Output: " + outputStream.toString());
+//	System.out.println("Captured Output: " + outputStream.toString());
 
-        return outputStream.toString();
+        return outputStream.toString().trim();
 
     }
 

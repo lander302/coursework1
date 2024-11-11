@@ -3,17 +3,14 @@ import static org.junit.Assert.assertTrue;
 import java.io.ByteArrayOutputStream;
 import java.io.PrintStream;
 import static org.junit.Assert.assertEquals;
-import java.util.logging.*;
 
 public class Dex2HexTest {
-
-
 
     public Dex2HexTest() {}
 
     Dex2Hex dex2hex;
 
-
+// Initialises variable
     @Before
     public void setUp() {
         dex2hex = new Dex2Hex();
@@ -23,11 +20,11 @@ public class Dex2HexTest {
 
     @Test
     public void testForcorrectInput() {
-        // Valid integer input
+        // assigning valid integer input
         String[] args = {"255"};
         String output = getOutput(args);
 
-        // Convert input to hexadecimal output
+        // Converts input to hexadecimal output
         assertTrue(output.contains("Converting the Decimal Value 255 to Hex..."));
         assertTrue(output.contains("Hexadecimal representation is: FF"));
         assertTrue(output.contains("Your integer has been converted"));
@@ -38,11 +35,12 @@ public class Dex2HexTest {
 
     @Test
     public void testForNoInput() {
-        // No output given
+        // assigns no output given
         String[] args = {};
-        String output = getOutput(args);  // Use getOutput to capture console output
+	// Captures console output in variable
+        String output = getOutput(args);
 
-        // Validate output message for no input and make sure no white space
+        // assign output message for no input and make sure no white space
         assertEquals("Error: No input has been given", output.trim());
 
 
@@ -50,18 +48,19 @@ public class Dex2HexTest {
 
     @Test
     public void testForANonIntegerInput() {
-        //When a non-integer input is given
+        // assigns a non-integer input is given
         String[] args = {"abc"};
-        String output = getOutput(args);  // Use getOutput to capture console output
+	// Captures console output in variable
+        String output = getOutput(args);
 
 
 
-        // Validate output message for non-integer input and make sure no white space
+        // assign output message for non-integer input and make sure no white space
         assertEquals("Error: Please input an integer.", output.trim());
 
         }
 
-    // Utility method to capture console output with input arguments
+    // method to capture console output with the given input arguments
      private String getOutput(String[] args) {
 
         ByteArrayOutputStream outputStream = new ByteArrayOutputStream();
@@ -78,15 +77,9 @@ public class Dex2HexTest {
         } catch (Exception e) {
             e.printStackTrace();
         } finally {
-            // Restore original System.out after the method executes
+            // Restores original System.out after the method executes
             System.setOut(originalOut);
         }
-
-
-
-
-        // Restore original System.out
-        System.setOut(originalOut);
 
         return outputStream.toString().trim();
 

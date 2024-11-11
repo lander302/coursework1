@@ -2,7 +2,6 @@ import org.junit.runner.JUnitCore;
 import org.junit.runner.Result;
 import org.junit.*;
 import org.junit.runner.notification.Failure;
-import java.lang.Exception;
 import java.util.logging.Logger;
 
 public class TestRunner {

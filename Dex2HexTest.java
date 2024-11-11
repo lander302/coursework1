@@ -7,7 +7,6 @@ import static org.junit.Assert.assertEquals;
 public class Dex2HexTest {
 
     public Dex2HexTest() {}
-
     Dex2Hex dex2hex;
 
 

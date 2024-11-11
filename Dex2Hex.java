@@ -1,20 +1,15 @@
 import java.util.Scanner;
 import static org.junit.Assert.assertTrue;
 import static org.junit.Assert.fail;
-import java.util.logging.Logger;
-import java.util.logging.ConsoleHandler;
-import java.util.logging.Level;
 import java.io.ByteArrayOutputStream;
-import java.util.logging.Handler;
 import java.io.IOException;
 
 class Dex2Hex {
 
-//private static final Logger logger = Logger.getLogger(Dex2Hex.class.getName());
-//logger.setLevel(Level.ALL);
 
     public static void main(String args[])    {
 
+	//Prints Error message is no input is given
         if (args.length == 0) {
             System.out.println("Error: No input has been given");
             return;
@@ -22,6 +17,7 @@ class Dex2Hex {
         int arg1;
         try {
             arg1 = Integer.parseInt(args[0]);
+	//Catches the other solution of nothing being entered and printing error message
         } catch (NumberFormatException e) {
             System.out.println("Error: Please input an integer.");
             return;

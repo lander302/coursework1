@@ -20,7 +20,6 @@ public class Dex2HexTest {
         assertTrue(output.contains("Converting the Decimal Value 255 to Hex..."));
         assertTrue(output.contains("Hexadecimal representation is: FF"));
         assertTrue(output.contains("Your integer has been converted"));
-
         }
 
 

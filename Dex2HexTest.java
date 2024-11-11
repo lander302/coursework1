@@ -10,13 +10,6 @@ public class Dex2HexTest {
 
     Dex2Hex dex2hex;
 
-// Initialises variable
-    @Before
-    public void setUp() {
-        dex2hex = new Dex2Hex();
-    }
-
-
 
     @Test
     public void testForcorrectInput() {
@@ -32,7 +25,6 @@ public class Dex2HexTest {
         }
 
 
-
     @Test
     public void testForNoInput() {
         // assigns no output given
@@ -42,9 +34,8 @@ public class Dex2HexTest {
 
         // assign output message for no input and make sure no white space
         assertEquals("Error: No input has been given", output.trim());
-
-
     }
+
 
     @Test
     public void testForANonIntegerInput() {
@@ -52,7 +43,6 @@ public class Dex2HexTest {
         String[] args = {"abc"};
 	// Captures console output in variable
         String output = getOutput(args);
-
 
 
         // assign output message for non-integer input and make sure no white space
@@ -69,9 +59,7 @@ public class Dex2HexTest {
 
 
 
-
-
-  try {
+	  try {
             // Run Dex2Hex with the specified arguments
             Dex2Hex.main(args);
         } catch (Exception e) {
